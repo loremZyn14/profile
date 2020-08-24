@@ -23,7 +23,15 @@
                <v-container class="white--text" >
                    <h2 class="text-h4 font-weight-bold">GERALD AFABLE</h2>
                    <v-divider color="white" class="my-4" width="200px"></v-divider>
-                    <h5 class="text-h6"><v-icon large color="red lighten-1">mdi-laravel</v-icon>  PHP Laravel Web Developer</h5>
+                   <v-toolbar color="transparent" flat>
+                        <v-toolbar-title color="white" class="white--text"> 
+                            <v-icon large color="white ">mdi-cellphone-link</v-icon> Web Developer
+                        </v-toolbar-title>
+                        <v-spacer></v-spacer>
+                        
+                        <a href="#lagnuages" class="v-btn white--text">Languages</a>
+                   </v-toolbar>
+                    
                </v-container>
             </v-col>
         </v-row>
@@ -68,7 +76,58 @@
                 </v-sheet>
             </v-col>
         </v-row>
-       
+        <v-container id="lagnuages">
+            <v-row>
+                <v-col lg="12">
+                    <h1 class="text-h4">Languages</h1>
+                    <v-divider width="300px" class="mt-3"></v-divider>
+                </v-col>
+                <v-col>
+                    <v-row align="center">
+                        <v-col lg="4" >
+                            <v-sheet class="px-12 pb-5  text-center" elevation="16" height="400px"  >
+                                <h3 class="pt-5 pb-10">Front-End</h3>
+                                <v-img src="./assets/vue.png" ></v-img>
+                            </v-sheet>
+                        </v-col>
+                        <v-col lg="4" >
+                            <v-sheet class="px-12 pb-5  text-center" elevation="16" height="400px" >
+                                <h3 class="py-5">Back-End</h3>
+                                <v-img src="./assets/laravel.png"></v-img>
+                            </v-sheet>
+                        </v-col>
+                        <v-col lg="4" >
+                            <v-sheet class="px-12 pb-5  text-center" elevation="16" height="400px"  >
+                                <h3 class="pt-5 pb-10">Database</h3>
+                                <v-img src="./assets/mysql.png"></v-img>
+                            </v-sheet>
+                        </v-col>
+                    </v-row>
+                </v-col>
+            </v-row>
+        </v-container>
+        <v-container>
+            <v-row>
+                <v-col lg="12">
+                    <h1 class="text-h4">Others</h1>
+                    <v-divider width="300px" class="mt-3"></v-divider>
+                </v-col>
+                <v-col>
+                    <v-carousel hide-delimiters height="300px">
+                        <v-carousel-item v-for="(item_list,i) in others" :key="i"  >
+                            <v-row>
+                                <v-col lg="3" v-for="(item,ndx) in item_list" :key="ndx">
+                                    <v-sheet class="px-12 pb-5  text-center" elevation="16">
+                                        <h3 class="pt-5 pb-10">{{ item.text }}</h3>
+                                        <v-img :src="item.image"></v-img>
+                                    </v-sheet>
+                                </v-col>
+                            </v-row>
+                        </v-carousel-item>
+                    <v-carousel>
+                </v-col>
+            </v-row>
+        </v-container>
       </v-main>
     </v-app>
   </div>
